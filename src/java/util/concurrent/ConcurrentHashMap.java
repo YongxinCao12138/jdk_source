@@ -682,6 +682,7 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
      * never be used in index calculations because of table bounds.
      */
     static final int spread(int h) {
+        // 让高16位也能参与计算，hash值包括了高16位的特征
         return (h ^ (h >>> 16)) & HASH_BITS;
     }
 
@@ -690,6 +691,7 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
      * See Hackers Delight, sec 3.2
      */
     private static final int tableSizeFor(int c) {
+        // 保证容量为2的次幂
         int n = c - 1;
         n |= n >>> 1;
         n |= n >>> 2;
