@@ -34,7 +34,6 @@ import java.util.List;
 import javax.security.auth.x500.X500Principal;
 
 import sun.security.x509.X509CertImpl;
-import sun.security.util.SignatureUtil;
 
 /**
  * <p>
